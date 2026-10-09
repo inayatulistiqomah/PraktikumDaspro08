@@ -26,6 +26,25 @@ public class studiKasus2 {
             } else {
                 pesan = "Dokumen tidak lengkap (kurang " +(4 - dokumen) +" dokumen). Dana penghargaan tidak diberikan.";
             }
-        } 
+        } else if (jenis.equalsIgnoreCase("PKM")) {
+            System.out.print("Jumlah dokumen : ");
+            int dokumen = sc.nextInt();
+            System.out.print("Status pendanaan PKM (1 = lolos, 0 = tidak lolos) : ");
+            int lolos = sc.nextInt();
+
+            if (dokumen == 4) {
+                if (lolos == 1) {
+                    pesan = "Dokumen lengkap dan lolos pendanaan PKM. Dana penghargaan diberikan";
+              } else {
+                  pesan = "Tidak lolos pendanaan PKM. Dana penghargaan tidak diberikan.";
+              }
+             } else {
+                  pesan = "Dokumen tidak lengkap (kurang " +(4 - dokumen) +" dokumen). Dana penghargaan tidak diberikan.";
+             }
+        } else {
+            pesan = "Kegiatan lainnya tidak memperoleh dana penghargaan";
+        }
+        System.out.print("Status : " +pesan);
+        sc.close();
     } 
 }
